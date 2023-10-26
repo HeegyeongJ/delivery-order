@@ -7,6 +7,6 @@ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 800px;
+    width: 60vw;
     border: 1px solid #000;
 }

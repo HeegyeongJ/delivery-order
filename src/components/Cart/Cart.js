@@ -2,16 +2,16 @@ import React from 'react';
 import './Cart.css';
 import ReactDOM from 'react-dom';
 
-const Backdrop = () => {
+const Backdrop = ({modalHandler}) => {
     return (
-        <div className='backdrop'></div>
+        <div className='backdrop' onClick={modalHandler}></div>
     );
 }
 
 const Modal = ({modalHandler}) => {
     return (
         <div className='cart' >
-            <div>아이템 박스</div>
+            <div className='item'>아이템 박스</div>
             <div className='total'>
                 <p>전체 금액</p>
                 <p>가격</p>
@@ -28,7 +28,7 @@ const Cart = (props) => {
     return (
         <div>
             {ReactDOM.createPortal(
-                <Backdrop />, document.getElementById('backdrop-root')
+                <Backdrop modalHandler={props.modalHandler}/>, document.getElementById('backdrop-root')
             )}
             {ReactDOM.createPortal(
                 <Modal modalHandler={props.modalHandler}/>, document.getElementById('modal-root')
