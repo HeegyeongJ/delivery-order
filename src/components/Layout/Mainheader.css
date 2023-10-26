@@ -1,0 +1,18 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 0 30px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+}
+
+.cart-btn{
+    background: none;
+    display: block;
+    border: 1px solid #000;
+    font-size: 18px;
+    padding: 10px 60px;
+}
