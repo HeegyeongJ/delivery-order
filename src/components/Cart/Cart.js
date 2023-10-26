@@ -8,7 +8,7 @@ const Backdrop = () => {
     );
 }
 
-const Modal = (props) => {
+const Modal = ({modalHandler}) => {
     return (
         <div className='cart' >
             <div>아이템 박스</div>
@@ -16,8 +16,8 @@ const Modal = (props) => {
                 <p>전체 금액</p>
                 <p>가격</p>
             </div>
-            <div className='btns'>
-                <button onClick={props.close}>취소</button>
+            <div className='btns' onClick={(e) => e.stopPropagation()}>
+                <button onClick={modalHandler}>취소</button>
                 <button>결제</button>
             </div>
         </div>
@@ -31,7 +31,7 @@ const Cart = (props) => {
                 <Backdrop />, document.getElementById('backdrop-root')
             )}
             {ReactDOM.createPortal(
-                <Modal />, document.getElementById('modal-root')
+                <Modal modalHandler={props.modalHandler}/>, document.getElementById('modal-root')
             )}
         </div>
     );

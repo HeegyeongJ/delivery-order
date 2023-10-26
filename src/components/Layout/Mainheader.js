@@ -6,18 +6,16 @@ import { useState } from 'react';
 const Mainheader = () => {
     const [openCart, setOpenCart] = useState(false);
 
-    const showCart = () => {
-        setOpenCart(true);
+    const modalHandler = () => {
+        setOpenCart(!openCart);
     }
-    const closeCart = () => {
-        setOpenCart(false);
-    }
+
     return (
         <>
-            {openCart && <Cart close={closeCart} />}
+            {openCart && <Cart modalHandler={modalHandler} />}
             <header>
                 <h1>DeliveryApp</h1>
-                <button className='cart-btn' onClick={showCart}>
+                <button className='cart-btn' onClick={modalHandler}>
                     <span>장바구니</span>
                     <span>수량</span>
                 </button>
