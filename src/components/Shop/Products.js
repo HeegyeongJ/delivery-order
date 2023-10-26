@@ -1,32 +1,40 @@
 import React from 'react';
 import './Products.css'
-import { useDispatch, useState } from 'react';
-import { cartActions } from '../../store';
+import { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux/es/exports';
+
 
 const Products = (props) => {
-    const { title, price, quantity, id } = props;
-    const addItemHandler = () => {
-        
+    const [quantity, setQuantity] = useState('1');
+    const dispatch = useDispatch();
+
+
+    const quantityHandler = (e) => {
+        setQuantity(e.target.value)
+    }
+    
+    const addQuantity = () => {
+        dispatch({type:'addCart', quantity: quantity*1});
+        setQuantity('1')
     }
 
     return (
-        <form className='item-box' onSubmit={addItemHandler}>
+        <div className='item-box'>
             <div>
-                <p>{title}</p>
-                <p>{price}원</p>
+                <p>{props.title}</p>
+                <p>{props.price}원</p>
             </div>
             <div>
-                <p>수량
-                    <input
-                        type='number'
-                        min='1'
-                        max='50'
-                        placeholder='1'
-                    />
-                </p>
-                <p><button>추가하기</button></p>
+                <label>수량</label> 
+                <input 
+                    type='number' 
+                    min='1' 
+                    max='50' 
+                    value={quantity}
+                    onChange={quantityHandler}/>
+                <button onClick={addQuantity}>추가하기</button>
             </div>
-        </form>
+        </div>
     );
 };
 
