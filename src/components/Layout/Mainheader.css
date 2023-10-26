@@ -15,3 +15,11 @@ header{
     font-size: 18px;
     padding: 10px 60px;
 }
+.cart-quantity{
+    display: inline-block;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: salmon;
+    border-radius: 50%;
+}
