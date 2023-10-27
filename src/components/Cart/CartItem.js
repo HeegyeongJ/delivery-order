@@ -1,7 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux/es/exports';
+import { cartActions } from '../../store';
 
 const CartItem = ({item}) => {
+    const dispatch = useDispatch();
+    
+    const addItemHandler = () => {
+        dispatch(cartActions.addInCart(item))
+    }
+    const removeItemHandler = () => {
+        dispatch(cartActions.removeInCart(item))
+    }
     return (
         <ItemDiv>
             <div>
@@ -10,8 +20,8 @@ const CartItem = ({item}) => {
                 <p>총 금액: {item.totalPrice}</p>
             </div>
             <div>
-                <Button>-</Button>
-                <Button>+</Button>
+                <Button onClick={removeItemHandler}>-</Button>
+                <Button onClick={addItemHandler}>+</Button>
             </div>
         </ItemDiv>
     );
