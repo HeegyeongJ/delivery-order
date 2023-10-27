@@ -17,7 +17,7 @@ const ProductsList = () => {
             quantity: 1
         },
         {
-            id: 'p1',
+            id: 'p3',
             title: '자장면',
             price: 6500,
             quantity: 1
@@ -30,8 +30,8 @@ const ProductsList = () => {
                     <li><Products 
                         key={product.id}
                         id={product.id}
-                        title={product.title}
                         price={product.price}
+                        title={product.title}
                         quantity={product.quantity} />
                      </li>
                 ))}

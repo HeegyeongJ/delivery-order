@@ -1,3 +1,6 @@
+p{
+    margin: 0;
+}
 .backdrop{
     position: fixed;
     top: 0;
@@ -20,12 +23,17 @@
 .item{
     border: 1px solid #000;
     padding: 20px;
+    margin-bottom: 10px;
 }
 .total {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4px;
 }
 .btns{
     text-align: right;
+}
+button{
+    margin-left: 3px;
 }

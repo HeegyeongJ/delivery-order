@@ -2,11 +2,11 @@ li{
     list-style: none;
 }
 .item-box{
-    margin: 0 auto 30px auto;
-    padding: 8px 30px;
+    margin: 0 auto 20px auto;
+    padding: 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60vw;
+    width: 50vw;
     border: 1px solid #000;
 }
